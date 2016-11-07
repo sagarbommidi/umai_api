@@ -9,7 +9,7 @@ class Api::V1::OwnersController < ApiController
   end
 
   def articles
-    render json: owner, serializer: OwnerSerializer, adapter: :attributes
+    render json: owner, serializer: OwnerArticlesSerializer, adapter: :attributes
   end
 
   private
