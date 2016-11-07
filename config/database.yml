@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  port: 5432
+  username: postgres
+  password: postgres
+  pool: 5
+
+development:
+  <<: *default
+  database: umai_api_development
+
+test:
+  <<: *default
+  database: umai_api_test
+
+production:
+  <<: *default
+  database: umai_api_production
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
